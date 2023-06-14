@@ -1,0 +1,42 @@
+<div class="container text-center">
+    <form [formGroup]="formGroupStudent">
+        <div class="mb-2">
+            <div class="display-6">
+                Cadastrar Alunos 🧑‍🎓
+            </div>
+        </div>
+        <span *ngIf="submitted && nome.invalid">
+            <small class="text-danger">Nome Inválido!</small>
+        </span>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="Nome">Nome</span>
+            <input type="text" id="nome" formControlName="nome" class="form-control">
+        </div>
+        <span *ngIf="submitted && email.invalid">
+            <small class="text-danger">Email Inválido!</small>
+        </span>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="email">Email </span>
+            <input type="email" id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="telefone">Telefone </span>
+            <input type="phone" id="telefone" formControlName="telefone" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="endereco">Endereço </span>
+            <input type="text" id="endereco" formControlName="endereco" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="curso">Curso </span>
+            <input type="text" id="curso" formControlName="curso" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="mb-2  p-4 text-end">
+            <button class="btn btn-primary me-2" (click)="clean()">Limpar</button>
+            <button class="btn btn-success" style="width: 15%;" (click)="save()">Salvar</button>
+        </div>
+    </form>
+</div>

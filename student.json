@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "nome": "Felipe Camargo",
+      "email": "felipe@gmiau.com",
+      "endereco": "Rua daquela outra rua ali",
+      "telefone": "1140028922",
+      "curso": "Análise e Desenvolvimento de Depressão"
+    }
+  ]
+}
