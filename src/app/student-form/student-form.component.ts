@@ -26,11 +26,11 @@ export class StudentFormComponent implements OnChanges {
     private formBuilder: FormBuilder) {
     this.formGroupStudent = formBuilder.group({
       id: [''],
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      course: ['', [Validators.required]]
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9-]+$')]],
+      course: ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]]
     });
   }
 
