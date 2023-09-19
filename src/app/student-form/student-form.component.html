@@ -19,16 +19,25 @@
             <span class="input-group-text" id="email">Email </span>
             <input type="email" id="email" formControlName="email" name="email" class="form-control">
         </div>
+        <span *ngIf="submitted && phoneNumber.invalid">
+            <small class="text-danger">Telefone Inválido!</small>
+        </span>
         <div class="input-group mb-3">
             <span class="input-group-text" id="phoneNumber">Telefone </span>
             <input type="phone" id="phoneNumber" formControlName="phoneNumber" class="form-control"
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="phoneNumber">
         </div>
+        <span *ngIf="submitted && address.invalid">
+            <small class="text-danger">Endereço Inválido!</small>
+        </span>
         <div class="input-group mb-3">
             <span class="input-group-text" id="address">Endereço </span>
             <input type="text" id="address" formControlName="address" class="form-control" name="address"
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
+        <span *ngIf="submitted && course.invalid">
+            <small class="text-danger">Curso Inválido!</small>
+        </span>
         <div class="input-group mb-3">
             <span class="input-group-text" id="course">Curso </span>
             <input type="text" id="course" formControlName="course" class="form-control" aria-label="Sizing example input"

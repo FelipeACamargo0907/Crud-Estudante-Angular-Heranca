@@ -28,9 +28,9 @@ export class StudentFormComponent implements OnChanges {
       id: [''],
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      address: [''],
-      phoneNumber: [''],
-      course: ['']
+      address: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      course: ['', [Validators.required]]
     });
   }
 
@@ -56,5 +56,15 @@ export class StudentFormComponent implements OnChanges {
   get email(): any {
     return this.formGroupStudent.get('email');
   }
+  get address(): any {
+    return this.formGroupStudent.get('address');
+  }
+  get phoneNumber(): any {
+    return this.formGroupStudent.get('phoneNumber');
+  }
+  get course(): any {
+    return this.formGroupStudent.get('course');
+  }
+
 
 }
