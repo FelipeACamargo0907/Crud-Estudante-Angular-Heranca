@@ -2,11 +2,11 @@
   "students": [
     {
       "id": 1,
-      "nome": "Felipe Camargo",
+      "name": "Felipe Camargo",
       "email": "felipe@gmiau.com",
-      "endereco": "Rua daquela outra rua ali",
-      "telefone": "1140028922",
-      "curso": "Análise e Desenvolvimento de Depressão"
+      "address": "Rua daquela outra rua ali",
+      "phoneNumber": "1140028922",
+      "course": "Análise e Desenvolvimento de Depressão"
     }
   ]
 }

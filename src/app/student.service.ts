@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
 
-  url = "http://localhost:3000/students";
+  url = "http://localhost:8080/students";
   
   constructor(private http: HttpClient) { }
 
@@ -23,8 +23,5 @@ export class StudentService {
    }
    update (student : Student): Observable<Student>{
     return this.http.put<Student>(`${this.url}/${student.id}`, student);
-   }
-   clean (student : Student): Observable<void>{
-    return this.http.delete<void>(`${this.url}/${student.id}`);
    }
 }

@@ -8,60 +8,60 @@ import { StudentService } from '../student.service';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent {
-  student : Student = {} as Student;
+  student: Student = {} as Student;
   isEditing: boolean = false;
-  students: Student [] = [];
+  students: Student[] = [];
 
-  constructor(private studentService: StudentService){}
-  
+  constructor(private studentService: StudentService) { }
+
+
 
   ngOnInit(): void {
     this.loadStudents();
-   }
-   
-   loadStudents() {
-     this.studentService.getStudents().subscribe(
-       {
-         next : data => this.students = data
-       }
-     );
-   }
- 
-   onSaveEvent (student : Student){
-     if (this.isEditing)
-     {
-       this.studentService.update(student).subscribe(
-         {
-           next: () => {
-             this.loadStudents();
-             this.isEditing = false;
-           }
-         }
-       )
-     }
-     else{
-     this.studentService.save(student).subscribe(
-       {
-         next : data => {
-           this.students.push(data);
- 
-         }
-       }
-     );
-   }
- }
- edit(student: Student) {
-  this.student = student;
- this.isEditing = true;
+  }
 
- }
+  loadStudents() {
+    this.studentService.getStudents().subscribe(
+      {
+        next: data => this.students = data
+      }
+    );
+  }
 
-   onCleanEvent (){
-   this.isEditing = false;
-   }
-   delete(student: Student) {
+  onSaveEvent(student: Student) {
+    if (this.isEditing) {
+      this.studentService.update(student).subscribe(
+        {
+          next: () => {
+            this.loadStudents();
+            // this.isEditing = false;
+          }
+        }
+      )
+    }
+    else {
+      this.studentService.save(student).subscribe(
+        {
+          next: data => {
+            this.students.push(data);
+
+          }
+        }
+      );
+    }
+  }
+  edit(student: Student) {
+    this.student = student;
+    this.isEditing = true;
+  }
+
+  onCleanEvent() {
+    this.isEditing = false;
+    this.student = {} as Student;
+  }
+  delete(student: Student) {
     this.studentService.delete(student).subscribe({
-    next: () => this.loadStudents()
-      })
- }
+      next: () => this.loadStudents()
+    })
+  }
 }

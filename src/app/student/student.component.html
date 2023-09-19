@@ -18,11 +18,11 @@
     <tbody>
       <tr *ngFor="let student of students">
         <th scope="row">{{student.id}}</th>
-        <td>{{student.nome}}</td>
+        <td>{{student.name}}</td>
         <td>{{student.email}}</td>
-        <td>{{student.endereco}}</td>
-        <td>{{student.telefone}}</td>
-        <td>{{student.curso}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.phoneNumber}}</td>
+        <td>{{student.course}}</td>
         <td>
           <button class="btn btn-light me-1 " (click)="edit(student)">📝</button>
           <button class="btn btn-light text-light" (click)="delete(student)">🗑️</button>
